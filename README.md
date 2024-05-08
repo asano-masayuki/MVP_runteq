@@ -40,7 +40,38 @@
 <div>自分も使用する予定なので自分の成績表示</div>
 <div>データのグラフかや、データのcsvで出力できるようにする</div>
 <div>経済指標から他の経済指標を予測する</div>
+<div>アラート機能：ユーザーが設定した条件に基づいて、経済指標の変化や市場の動きに関するアラートを受け取る</div>
+<div>ユーザー同士のコミニュケーションが取れる掲示板</div>
+<div>一定期間毎のトレンド予想をアンケート形式にし、現在どちらの目線の人が多いか可視化する</div>
 
 ## <div>■ 機能の実装方針予定</div>
 <div>Alpha Vantage API を使用して為替レート・経済指標結果データを取得する</div>
 <div>chat GPT も使用していきたい</div>
+
+## <div>■ 技術スタック</div>
+### <div>開発環境</div>
+<div>Docker</div>
+
+### <div>サーバサイド</div>
+<div>Ruby on Rails 7系</div>
+<div>Ruby 3.2.2 Rails 7.0.4.3</div>
+
+### <div>フロントエンド</div>
+<div>HotWire</div>
+
+### <div>CSSフレームワーク</div>
+<div>bootstrap5系</div>
+
+### <div>WebAPI</div>
+<div>Alpha Vantage API</div>
+
+### <div>インフラ</div>
+<div>Webアプリケーションサーバ: Fly.io</div>
+<div>ファイルサーバ: AWS S3</div>
+<div>セッションサーバ: Redis（Redis by Upstash）</div>
+<div>データベースサーバ: PostgreSQL（Fly Postgres）</div>
+
+### <div>その他</div>
+<div>VCS: GitHub</div>
+<div>CI/CD: GitHubActions</div>
+
