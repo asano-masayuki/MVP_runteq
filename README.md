@@ -77,7 +77,7 @@
 
 # 画面遷移図
 
-Figma：https://www.figma.com/file/ashYLYvN3BcOAAoW77L4zI/Untitled?type=whiteboard&node-id=0-1&t=3nXwDlamndeIOtBn-0
+Figma：https://www.figma.com/design/o0IJMhjoqvB0G33IFG8W8H/MVP?node-id=0-1&t=tUih91efwS3K9tjw-0
 
 ## READMEに記載した機能
 ###  ユーザー管理システム
