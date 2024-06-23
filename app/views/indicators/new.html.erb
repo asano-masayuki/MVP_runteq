@@ -1,0 +1,31 @@
+<h1>新しい経済指標を登録</h1>
+
+<%= form_with(model: @indicator, url: indicators_path) do |form| %>
+  <% if @indicator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@indicator.errors.count, "error") %> prohibited this indicator from being saved:</h2>
+
+      <ul>
+      <% @indicator.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :indicator_name %>
+    <%= form.text_field :indicator_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit '経済指標を登録' %>
+  </div>
+<% end %>
+
+<%= link_to '戻る', indicators_path %>

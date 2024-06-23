@@ -1,0 +1,18 @@
+<h1>経済指標一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Indicator Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @indicators.each do |indicator| %>
+      <tr>
+        <td><%= indicator.indicator_name %></td>
+        <td><%= indicator.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

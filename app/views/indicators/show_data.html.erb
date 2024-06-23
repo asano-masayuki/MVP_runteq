@@ -1,0 +1,102 @@
+<h1>経済指標の結果表示</h1>
+
+<%= form_with(url: show_data_indicators_path, method: :get, local: true) do %>
+  <div class="field">
+    <%= label_tag :indicator_id, "経済指標" %>
+    <%= select_tag :indicator_id, options_for_select(@indicators.map { |indicator| [indicator.indicator_name, indicator.id] }), prompt: '指標を選択' %>
+  </div>
+  <div class="actions">
+    <%= submit_tag '表示' %>
+  </div>
+<% end %>
+
+<% if @selected_indicator.present? %>
+  <h2><%= @selected_indicator.indicator_name %> の結果</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>結果 (actual_value)</th>
+        <th>予想値 (forecast_value)</th>
+        <th>発表日時 (date)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @selected_indicator.industrial_production_indices.each do |entry| %>
+        <tr>
+          <td><%= entry.actual_value %></td>
+          <td><%= entry.forecast_value %></td>
+          <td><%= entry.date %></td>
+        </tr>
+      <% end %>
+      <% @selected_indicator.cpis.each do |entry| %>
+        <tr>
+          <td><%= entry.actual_value %></td>
+          <td><%= entry.forecast_value %></td>
+          <td><%= entry.date %></td>
+        </tr>
+      <% end %>
+      <% @selected_indicator.ffrs.each do |entry| %>
+        <tr>
+          <td><%= entry.actual_value %></td>
+          <td><%= entry.forecast_value %></td>
+          <td><%= entry.date %></td>
+        </tr>
+      <% end %>
+      <% @selected_indicator.gdps.each do |entry| %>
+        <tr>
+          <td><%= entry.actual_value %></td>
+          <td><%= entry.forecast_value %></td>
+          <td><%= entry.date %></td>
+        </tr>
+      <% end %>
+      <% @selected_indicator.bond_yields.each do |entry| %>
+        <tr>
+          <td><%= entry.actual_value %></td>
+          <td><%= entry.forecast_value %></td>
+          <td><%= entry.date %></td>
+        </tr>
+      <% end %>
+      <% @selected_indicator.retail_sales.each do |entry| %>
+        <tr>
+          <td><%= entry.actual_value %></td>
+          <td><%= entry.forecast_value %></td>
+          <td><%= entry.date %></td>
+        </tr>
+      <% end %>
+      <% @selected_indicator.unemployment_rates.each do |entry| %>
+        <tr>
+          <td><%= entry.actual_value %></td>
+          <td><%= entry.forecast_value %></td>
+          <td><%= entry.date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<%= link_to '戻る', indicators_path %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const indicatorTypeSelect = document.getElementById('indicator_type_select');
+    const economicIndicatorSelect = document.getElementById('economic_indicator_select');
+    const indicators = <%= @indicators.to_json.html_safe %>;
+
+    indicatorTypeSelect.addEventListener('change', function() {
+      const selectedType = indicatorTypeSelect.value;
+      economicIndicatorSelect.innerHTML = '';
+
+      const filteredIndicators = indicators.filter(indicator => {
+        return indicator.indicator_name === selectedType;
+      });
+
+      filteredIndicators.forEach(indicator => {
+        const option = document.createElement('option');
+        option.value = indicator.id;
+        option.text = indicator.indicator_name;
+        economicIndicatorSelect.appendChild(option);
+      });
+    });
+  });
+</script>

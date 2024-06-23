@@ -1,0 +1,58 @@
+<h1>新しいデータを登録</h1>
+
+<%= form_with(url: create_data_indicators_path, local: true) do %>
+  <div class="field">
+    <%= label_tag 'data_entry[indicator_type]', "指標タイプ" %>
+    <%= select_tag 'data_entry[indicator_type]', options_for_select(@indicator_types.map { |type| [type, type] }), id: 'indicator_type_select' %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'data_entry[economic_indicator_id]', "経済指標" %>
+    <%= select_tag 'data_entry[economic_indicator_id]', options_for_select(@indicators.map { |indicator| [indicator.indicator_name, indicator.id] }), id: 'economic_indicator_select' %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'data_entry[actual_value]', "結果 (actual_value)" %>
+    <%= number_field_tag 'data_entry[actual_value]', nil, step: :any %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'data_entry[forecast_value]', "予想値 (forecast_value)" %>
+    <%= number_field_tag 'data_entry[forecast_value]', nil, step: :any %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'data_entry[date]', "発表日時 (date)" %>
+    <%= date_field_tag 'data_entry[date]' %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag 'データを登録' %>
+  </div>
+<% end %>
+
+<%= link_to '戻る', indicators_path %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const indicatorTypeSelect = document.getElementById('indicator_type_select');
+    const economicIndicatorSelect = document.getElementById('economic_indicator_select');
+    const indicators = <%= @indicators.to_json.html_safe %>;
+
+    indicatorTypeSelect.addEventListener('change', function() {
+      const selectedType = indicatorTypeSelect.value;
+      economicIndicatorSelect.innerHTML = '';
+
+      const filteredIndicators = indicators.filter(indicator => {
+        return indicator.indicator_name === selectedType;
+      });
+
+      filteredIndicators.forEach(indicator => {
+        const option = document.createElement('option');
+        option.value = indicator.id;
+        option.text = indicator.indicator_name;
+        economicIndicatorSelect.appendChild(option);
+      });
+    });
+  });
+</script>

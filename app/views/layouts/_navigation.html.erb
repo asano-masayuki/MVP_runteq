@@ -22,7 +22,29 @@
             </li>
             <li class="<%= 'active' if current_page?('/home/minor') %>">
                 <%= link_to "/home/minor" do %>
-                <i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span>
+                <i class="fa fa-desktop"></i> <span class="nav-label">為替予想</span>
+                <% end %>
+            </li>
+            <li class="<%= 'active' if current_page?(indicators_path) %>">
+                <%= link_to indicators_path do %>
+                    <i class="fa fa-desktop"></i> <span class="nav-label">経済指標一覧</span>
+                <% end %>
+            </li>
+            <li class="<%= 'active' if current_page?(new_indicator_path) %>">
+                <%= link_to new_indicator_path do %>
+                <i class="fa fa-plus"></i> <span class="nav-label">経済指標作成</span>
+                <% end %>
+            </li>
+            
+            <li class="<%= 'active' if current_page?(new_data_indicators_path) %>">
+                <%= link_to new_data_indicators_path do %>
+                    <i class="fa fa-plus"></i> <span class="nav-label">経済指標データ登録</span>
+                <% end %>
+            </li>
+
+            <li class="<%= 'active' if current_page?(show_data_indicators_path) %>">
+                <%= link_to show_data_indicators_path do %>
+                    <i class="fa fa-eye"></i> <span class="nav-label">経済指標結果表示</span>
                 <% end %>
             </li>
         </ul>

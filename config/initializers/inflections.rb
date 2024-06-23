@@ -14,3 +14,8 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym "RESTful"
 # end
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.acronym 'CPI'
+  inflect.acronym 'FFR'
+  inflect.acronym 'GDP'
+end
