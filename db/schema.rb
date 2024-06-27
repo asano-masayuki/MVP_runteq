@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_16_124115) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_24_134534) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_16_124115) do
     t.bigint "economic_indicator_id", null: false
     t.float "actual_value"
     t.float "forecast_value"
-    t.date "date"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["economic_indicator_id"], name: "index_bond_yields_on_economic_indicator_id"
@@ -28,7 +28,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_16_124115) do
     t.bigint "economic_indicator_id", null: false
     t.float "actual_value"
     t.float "forecast_value"
-    t.date "date"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["economic_indicator_id"], name: "index_cpis_on_economic_indicator_id"
@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_16_124115) do
     t.bigint "economic_indicator_id", null: false
     t.float "actual_value"
     t.float "forecast_value"
-    t.date "date"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["economic_indicator_id"], name: "index_ffrs_on_economic_indicator_id"
@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_16_124115) do
     t.bigint "economic_indicator_id", null: false
     t.float "actual_value"
     t.float "forecast_value"
-    t.date "date"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["economic_indicator_id"], name: "index_gdps_on_economic_indicator_id"
@@ -65,7 +65,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_16_124115) do
     t.bigint "economic_indicator_id", null: false
     t.float "actual_value"
     t.float "forecast_value"
-    t.date "date"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["economic_indicator_id"], name: "index_industrial_production_indices_on_economic_indicator_id"
@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_16_124115) do
     t.bigint "economic_indicator_id", null: false
     t.float "actual_value"
     t.float "forecast_value"
-    t.date "date"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["economic_indicator_id"], name: "index_retail_sales_on_economic_indicator_id"
@@ -85,7 +85,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_16_124115) do
     t.bigint "economic_indicator_id", null: false
     t.float "actual_value"
     t.float "forecast_value"
-    t.date "date"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["economic_indicator_id"], name: "index_unemployment_rates_on_economic_indicator_id"

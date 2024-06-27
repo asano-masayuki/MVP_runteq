@@ -26,49 +26,49 @@
         <tr>
           <td><%= entry.actual_value %></td>
           <td><%= entry.forecast_value %></td>
-          <td><%= entry.date %></td>
+          <td><%= entry.date.strftime('%Y年%m月%d日 %H:%M') %></td>
         </tr>
       <% end %>
       <% @selected_indicator.cpis.each do |entry| %>
         <tr>
           <td><%= entry.actual_value %></td>
           <td><%= entry.forecast_value %></td>
-          <td><%= entry.date %></td>
+          <td><%= entry.date.strftime('%Y年%m月%d日 %H:%M') %></td>
         </tr>
       <% end %>
       <% @selected_indicator.ffrs.each do |entry| %>
         <tr>
           <td><%= entry.actual_value %></td>
           <td><%= entry.forecast_value %></td>
-          <td><%= entry.date %></td>
+          <td><%= entry.date.strftime('%Y年%m月%d日 %H:%M') %></td>
         </tr>
       <% end %>
       <% @selected_indicator.gdps.each do |entry| %>
         <tr>
           <td><%= entry.actual_value %></td>
           <td><%= entry.forecast_value %></td>
-          <td><%= entry.date %></td>
+          <td><%= entry.date.strftime('%Y年%m月%d日 %H:%M') %></td>
         </tr>
       <% end %>
       <% @selected_indicator.bond_yields.each do |entry| %>
         <tr>
           <td><%= entry.actual_value %></td>
           <td><%= entry.forecast_value %></td>
-          <td><%= entry.date %></td>
+          <td><%= entry.date.strftime('%Y年%m月%d日 %H:%M') %></td>
         </tr>
       <% end %>
       <% @selected_indicator.retail_sales.each do |entry| %>
         <tr>
           <td><%= entry.actual_value %></td>
           <td><%= entry.forecast_value %></td>
-          <td><%= entry.date %></td>
+          <td><%= entry.date.strftime('%Y年%m月%d日 %H:%M') %></td>
         </tr>
       <% end %>
       <% @selected_indicator.unemployment_rates.each do |entry| %>
         <tr>
           <td><%= entry.actual_value %></td>
           <td><%= entry.forecast_value %></td>
-          <td><%= entry.date %></td>
+          <td><%= entry.date.strftime('%Y年%m月%d日 %H:%M') %></td>
         </tr>
       <% end %>
     </tbody>
