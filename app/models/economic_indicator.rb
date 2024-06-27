@@ -7,3 +7,4 @@ class EconomicIndicator < ApplicationRecord
   has_many :retail_sales, class_name: 'RetailSale'
   has_many :unemployment_rates, class_name: 'UnemploymentRate'
 end
+
